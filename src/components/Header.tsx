@@ -2,6 +2,7 @@
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Lock, Menu, X } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 export const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -10,14 +11,14 @@ export const Header = () => {
     <header className="relative bg-white/90 backdrop-blur-sm border-b border-gray-100 sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-4">
-          <div className="flex items-center space-x-2">
+          <Link to="/" className="flex items-center space-x-2">
             <div className="bg-gradient-to-r from-blue-600 to-indigo-600 p-2 rounded-lg">
               <Lock className="h-6 w-6 text-white" />
             </div>
             <span className="text-xl font-bold bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
               Smart Parcel Box
             </span>
-          </div>
+          </Link>
           
           <nav className="hidden md:flex items-center space-x-8">
             <a href="#features" className="text-gray-700 hover:text-blue-600 transition-colors font-medium">
@@ -29,9 +30,16 @@ export const Header = () => {
             <a href="#contact" className="text-gray-700 hover:text-blue-600 transition-colors font-medium">
               Contact
             </a>
-            <Button className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white">
-              Get Started
-            </Button>
+            <Link to="/login">
+              <Button variant="outline" className="mr-2">
+                Login
+              </Button>
+            </Link>
+            <Link to="/signup">
+              <Button className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white">
+                Sign Up
+              </Button>
+            </Link>
           </nav>
 
           <button
@@ -54,9 +62,16 @@ export const Header = () => {
               <a href="#contact" className="text-gray-700 hover:text-blue-600 transition-colors font-medium">
                 Contact
               </a>
-              <Button className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white w-full">
-                Get Started
-              </Button>
+              <Link to="/login">
+                <Button variant="outline" className="w-full mb-2">
+                  Login
+                </Button>
+              </Link>
+              <Link to="/signup">
+                <Button className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white w-full">
+                  Sign Up
+                </Button>
+              </Link>
             </nav>
           </div>
         )}
