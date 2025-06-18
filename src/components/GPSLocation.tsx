@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -10,11 +9,11 @@ export const GPSLocation = () => {
   const [error, setError] = useState<string | null>(null);
   const [lastUpdated, setLastUpdated] = useState<string>('');
 
-  // Simulated Smart Parcel Box location (in a real scenario, this would come from the box's GPS module)
+  // Smart Parcel Box location in Bangalore, Texas Instruments
   const boxLocation = {
-    lat: 37.7749,
-    lng: -122.4194,
-    address: "123 Main Street, San Francisco, CA 94102"
+    lat: 12.9716,
+    lng: 77.5946,
+    address: "Texas Instruments, Bangalore, Karnataka, India"
   };
 
   const getCurrentLocation = () => {
